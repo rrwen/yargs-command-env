@@ -8,7 +8,7 @@
 		"docs": "documentation build */**.js -f html -o docs",
 		"istanbul": "istanbul cover node_modules/tape/bin/tape tests/test.js",
 		"test": "node ./tests/test.js"
-	  },
+	},
 	"directories": {
 		"test": "tests"
 	},
@@ -27,6 +27,11 @@
 		"documentation": "^5.3.3",
 		"istanbul": "^0.4.5",
 		"moment": "^2.19.1",
-		"tape": "^4.8.0"
+		"tape": "^4.8.0",
+		"yargs": "^10.1.0"
+	},
+	"dependencies": {
+		"env": "0.0.2",
+		"envfile": "^2.1.1"
 	}
 }
