@@ -12,6 +12,7 @@ Yargs command for managing environment files
 [![Coverage Status](https://coveralls.io/repos/github/rrwen/yargs-command-env/badge.svg?branch=master)](https://coveralls.io/github/rrwen/yargs-command-env?branch=master)
 [![npm](https://img.shields.io/npm/dt/yargs-command-env.svg)](https://www.npmjs.com/package/yargs-command-env)
 [![GitHub license](https://img.shields.io/github/license/rrwen/yargs-command-env.svg)](https://github.com/rrwen/yargs-command-env/blob/master/LICENSE)
+[![Donate](https://img.shields.io/badge/donate-Donarbox-yellow.svg)](https://donorbox.org/rrwen)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/rrwen/yargs-command-env.svg?style=social)](https://twitter.com/intent/tweet?text=Yargs%20command%20for%20managing%20environment%20files:%20https%3A%2F%2Fgithub.com%2Frrwen%2Fyargs-command-env%20%23nodejs%20%23npm)
 
 ## Install
