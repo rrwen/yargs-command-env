@@ -167,9 +167,9 @@ npm | Purpose
 [fs](https://nodejs.org/api/fs.html) | Read and write [.env]() files
 
 ```
-yargs   <-- CLI arguments
+  yargs   <-- CLI arguments
     |
-envfile  <-- Parse and stringify .env files
+ envfile  <-- Parse and stringify .env files
     |
-fs   <-- Read and write .env files
+   fs     <-- Read and write .env files
 ```
