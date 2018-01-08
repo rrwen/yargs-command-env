@@ -2,7 +2,7 @@ TAP version 13
 # Tests for yargs-command-env (0.0.0)
 # Node.js (v7.9.0)
 # Description: Yargs command for managing environment files
-# Date: 2018-01-07 10:36:39
+# Date: 2018-01-07 11:54:04
 # Dependencies: envfile (^2.1.1)
 # Developer: coveralls (^3.0.0), documentation (^5.3.3), istanbul (^0.4.5), moment (^2.19.1), tape (^4.8.0), yargs (^10.1.0)
 # (A) tests on default options
@@ -15,10 +15,14 @@ ok 6 (A) env delete
 ok 7 (A) process.env delete
 # (B) tests on custom options
 ok 8 (B) env2 clear2
-ok 9 (B) env2 reset2
-ok 10 (B) env2 view2
-ok 11 (B) env2 set2
-ok 12 (A) process.env set2
-ok 13 (B) env2 delete2
+ok 9 (B) process.env clear2
+ok 10 (B) env2 reset2
+ok 11 (B) process.env reset2
+ok 12 (B) env2 view2
+ok 13 (B) process.env view2
+ok 14 (B) env2 set2
+ok 15 (B) process.env set2
+ok 16 (B) env2 delete2
+ok 17 (B) process.env delete
 
-1..13
+1..17

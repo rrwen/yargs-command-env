@@ -107,15 +107,30 @@ test('Tests for ' + json.name + ' (' + json.version + ')', t => {
 	expected = {_: ['env2'], task2: 'clear2', env: {option: 'value'}};
 	t.deepEquals(actual, expected, '(B) env2 clear2');
 	
+	// (test_custom_clear_env) Test custom clear command in process.env
+	actual = process.env.field;
+	expected = undefined;
+	t.equals(actual, expected, '(B) process.env clear2')
+	
 	// (test_custom_reset) Test custom reset command
 	actual = customHandler({_: ['env2'], task2: 'reset2'});
 	expected = {_: ['env2'], task2: 'reset2'};
 	t.deepEquals(actual, expected, '(B) env2 reset2');
 	
+	// (test_custom_reset_env) Test custom reset command in process.env
+	actual = process.env.field;
+	expected = 'value';
+	t.equals(actual, expected, '(B) process.env reset2')
+	
 	// (test_custom_view) Test custom view command
 	actual = customHandler({_: ['env2'], env2: './tests/out/env2.env', task2: 'view2'});
 	expected = {_: ['env2'], env2: './tests/out/env2.env', task2: 'view2'};
 	t.deepEquals(actual, expected, '(B) env2 view2');
+	
+	// (test_custom_view_env) Test custom view command in process.env
+	actual = process.env.field;
+	expected = 'value';
+	t.equals(actual, expected, '(B) process.env view2')
 	
 	// (test_custom_set) Test custom set command
 	actual = customHandler({_: ['env2'], task2: 'set2', key2: 'field', value2: 'value2'});
@@ -126,12 +141,18 @@ test('Tests for ' + json.name + ' (' + json.version + ')', t => {
 	var setSecond = customHandler({_: ['env2'], task2: 'set2', key2: 'field2', value2: 'value3'});
 	actual = {field: process.env.field, field2: process.env.field2};
 	expected = {field: 'value2', field2: 'value3'};
-	t.deepEquals(actual, expected, '(A) process.env set2')
+	t.deepEquals(actual, expected, '(B) process.env set2')
 	
 	// (test_custom_delete) Test custom delete command
 	actual = customHandler({_: ['env2'], task2: 'delete2', key2: 'field'});
 	expected = {_: ['env2'], task2: 'delete2', key2: 'field'};
 	t.deepEquals(actual, expected, '(B) env2 delete2');
+	
+	// (test_custom_delete_env) Test custom delete command in process.env
+	var deleteSecond = customHandler({_: ['env2'], task2: 'delete2', key2: 'field2'});
+	actual = {field: process.env.field, field2: process.env.field2};
+	expected = {field: undefined, field2: undefined};
+	t.deepEquals(actual, expected, '(B) process.env delete')
 	
 	// (test_end) End tests and cleanup files
 	fs.unlinkSync('./tests/out/env.env');

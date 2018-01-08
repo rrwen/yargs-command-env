@@ -59,7 +59,7 @@
   <p>Yargs command for managing env files.</p>
 <ul>
 <li><a href="https://www.npmjs.com/package/yargs">Yargs npm Package</a></li>
-<li><a href="https://www.env.org/">JavaScript Object Notation (JSON)</a></li>
+<li><a href="https://www.npmjs.com/package/dotenv">dotenv npm Package</a></li>
 </ul>
 
 
@@ -144,8 +144,6 @@
               
                 <tr>
   <td class='break-word'><span class='code bold'>options.describe</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
-  
-    (default <code>&#39;describe&#39;</code>)
   </td>
   <td class='break-word'><span>description for base 
 <code>&#x3C;env></code>
@@ -373,7 +371,7 @@
 <span class="hljs-keyword">var</span> yargs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'yargs'</span>);
 
 <span class="hljs-comment">// (env) Load command with path to env file</span>
-<span class="hljs-keyword">var</span> env = <span class="hljs-built_in">require</span>(<span class="hljs-string">'yargs-command-env'</span>)({<span class="hljs-attr">file</span>: <span class="hljs-string">'./path/to/env.env'</span>});
+<span class="hljs-keyword">var</span> env = <span class="hljs-built_in">require</span>(<span class="hljs-string">'yargs-command-env'</span>)({<span class="hljs-attr">file</span>: <span class="hljs-string">'./path/to/.env'</span>});
 
 <span class="hljs-comment">// (yargs) Add command to manage env file</span>
 <span class="hljs-keyword">var</span> argv = yargs.command(env).argv;
@@ -384,6 +382,7 @@
 
 <span class="hljs-comment">// (options_command) Setup command options</span>
 options = {};
+options.file = <span class="hljs-string">'.env'</span>;
 options.command = <span class="hljs-string">'env2'</span>;
 options.defaults = {<span class="hljs-attr">field</span>: <span class="hljs-string">'value'</span>};
 options.describe = <span class="hljs-string">'Description'</span>;

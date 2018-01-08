@@ -8,7 +8,7 @@ var fs = require('fs');
  * Yargs command for managing env files.
  *
  * * {@link https://www.npmjs.com/package/yargs Yargs npm Package}
- * * {@link https://www.env.org/ JavaScript Object Notation (JSON)}
+ * * {@link https://www.npmjs.com/package/dotenv dotenv npm Package}
  *
  * @module env
  * @param {Object} [options={}] options for this function.
@@ -25,7 +25,7 @@ var fs = require('fs');
  *
  *  * If `options.defaults` is undefined, the object `argv.env` will be used before defaulting to `{}` 
  *
- * @param {string} [options.describe='describe'] description for base `<env>` command.
+ * @param {string} options.describe description for base `<env>` command.
  * @param {Object} [options.task={}] options for `<task>` commands.
  * @param {Object} [options.task.command='task'] name of `<task>` command.
  *
@@ -84,7 +84,7 @@ var fs = require('fs');
  * var yargs = require('yargs');
  *
  * // (env) Load command with path to env file
- * var env = require('yargs-command-env')({file: './path/to/env.env'});
+ * var env = require('yargs-command-env')({file: './path/to/.env'});
  *
  * // (yargs) Add command to manage env file
  * var argv = yargs.command(env).argv;
@@ -95,6 +95,7 @@ var fs = require('fs');
  *
  * // (options_command) Setup command options
  * options = {};
+ * options.file = '.env';
  * options.command = 'env2';
  * options.defaults = {field: 'value'};
  * options.describe = 'Description';
@@ -143,15 +144,15 @@ module.exports = options => {
 		'\n* ' + options.task.view +
 		'\n* ' + options.task.clear +
 		'\n* ' + options.task.reset +
-		'\n\nSet option to value' +
+		'\n\nSet variable to value' +
 		'\n> ' +  options.task.set + ' [' + options.task.key + '] [' + options.task.value + ']' +
-		'\n\nRemove default option' +
+		'\n\nRemove default variable' +
 		'\n> ' + options.task.delete + ' [' + options.task.key + ']' +
-		'\n\nView default options' +
+		'\n\nView default variable' +
 		'\n> ' + options.task.view +
-		'\n\nClear default options' +
+		'\n\nClear default variable' +
 		'\n> ' + options.task.clear +
-		'\n\nReset default options' +
+		'\n\nReset default variable' +
 		'\n> ' + options.task.reset +
 		'\n\nManage other env file' +
 		'\n> ' +  options.task.set + ' [' + options.task.key + '] [' + options.task.value + ']' + ' --' + options.task.env + ' other.env' +
