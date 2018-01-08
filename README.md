@@ -28,10 +28,81 @@ For the latest developer version, see [Developer Install](#developer-install).
 
 ## Usage
 
-An example usage of yargs-command-env:
+Create a file named `bin.js` with the following contents:
 
 ```javascript
-var yargscommandenv = require('yargs-command-env');
+var yargs = require('yargs');
+
+// (env) Load command with path to env file
+// Replace './path/to/.env' with your .env file
+var env = require('yargs-command-env')({file: './path/to/.env'});
+
+// (yargs) Add command to manage env file
+var argv = yargs.command(env).argv;
+```
+
+Display help options for `bin.js` using [node](https://nodejs.org/api/cli.html):
+
+```
+node bin.js env help
+```
+
+The following will be displayed:
+
+```
+bin env <task> [key] [value] [--env]
+
+manage default env
+
+<task> is one of:
+
+* set
+* delete
+* view
+* clear
+* reset
+
+Set variable to value
+> set [key] [value]
+
+Remove default variable
+> delete [key]
+
+View default variable
+> view
+
+Clear default variable
+> clear
+
+Reset default variable
+> reset
+
+Manage other env file
+> set [key] [value] --env other.env
+> delete [key] --env other.env
+> view --env other.env
+> clear --env other.env
+> reset --env other.env
+```
+
+Default env files are managed with the commands below:
+
+```
+node bin.js env view
+node bin.js env clear
+node bin.js env reset
+node bin.js env set key value
+node bin.js env delete key
+```
+
+Other env files are managed by passing a path in the option `--env`:
+
+```
+node bin.js env view --env .env
+node bin.js env clear --env .env
+node bin.js env reset --env .env
+node bin.js env set key value --env .env
+node bin.js env delete key --env .env
 ```
 
 See [Documentation](https://rrwen.github.io/yargs-command-env) for more details.
