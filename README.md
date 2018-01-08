@@ -162,17 +162,14 @@ The module [yargs-command-env](https://www.npmjs.com/package/yargs-command-env) 
 
 npm | Purpose
 --- | ---
-component | description
-component | description
-component | description
-component | description
+[yargs](https://www.npmjs.com/package/yargs)| Manage command line arguments and options
+[envfile](https://www.npmjs.com/package/envfile) | Parse and stringify [.env]() files and objects 
+[fs](https://nodejs.org/api/fs.html) | Read and write [.env]() files
 
 ```
-component   <-- detail
+yargs   <-- CLI arguments
     |
-component   <-- detail
+envfile  <-- Parse and stringify .env files
     |
-component   <-- detail
-    |
-component   <-- detail
+fs   <-- Read and write .env files
 ```
