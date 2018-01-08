@@ -84,7 +84,7 @@ var fs = require('fs');
  * var yargs = require('yargs');
  *
  * // (env) Load command with path to env file
- * var env = require('yargs-command-env')({file: './path/to/.env'});
+ * var env = require('yargs-command-env')({file: 'path/to/.env'});
  *
  * // (yargs) Add command to manage env file
  * var argv = yargs.command(env).argv;
@@ -95,7 +95,7 @@ var fs = require('fs');
  *
  * // (options_command) Setup command options
  * options = {};
- * options.file = '.env';
+ * options.file = 'path/to/.env';
  * options.command = 'env2';
  * options.defaults = {field: 'value'};
  * options.describe = 'Description';
