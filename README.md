@@ -163,8 +163,8 @@ The module [yargs-command-env](https://www.npmjs.com/package/yargs-command-env) 
 npm | Purpose
 --- | ---
 [yargs](https://www.npmjs.com/package/yargs)| Manage command line arguments and options
-[envfile](https://www.npmjs.com/package/envfile) | Parse and stringify [.env]() files and objects 
-[fs](https://nodejs.org/api/fs.html) | Read and write [.env]() files
+[envfile](https://www.npmjs.com/package/envfile) | Parse and stringify [.env](https://www.npmjs.com/package/dotenv) files and objects 
+[fs](https://nodejs.org/api/fs.html) | Read and write [.env](https://www.npmjs.com/package/dotenv) files
 
 ```
   yargs   <-- CLI arguments
