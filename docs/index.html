@@ -1,0 +1,426 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>yargs-command-env 0.0.0 | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+  <link href='assets/split.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation m0'>
+    <div class='flex'>
+      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'>yargs-command-env</h3>
+          <div class='mb1'><code>0.0.0</code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#env'
+                  class="">
+                  env
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='env'>
+      env
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Yargs command for managing env files.</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/yargs">Yargs npm Package</a></li>
+<li><a href="https://www.env.org/">JavaScript Object Notation (JSON)</a></li>
+</ul>
+
+
+  <div class='pre p1 fill-light mt0'>env</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
+	    options for this function.
+
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>options.file</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  </td>
+  <td class='break-word'><span>default path to env file for yargs.
+<ul>
+<li>The command line argument <code>[--env]</code> will take priority over <code>options.file</code></li>
+</ul>
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>options.command</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  
+    (default <code>&#39;env&#39;</code>)
+  </td>
+  <td class='break-word'><span>name of base 
+<code>&#x3C;env></code>
+ command.
+<ol>
+<li><strong>Original</strong>: <code>env &#x3C;task> [key] [value] [--env]</code></li>
+<li><strong>options.command='newenv':</strong> <code>newenv &#x3C;task> [key] [value] [--env]</code></li>
+</ol>
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>options.defaults</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+  
+    (default <code>{}</code>)
+  </td>
+  <td class='break-word'><span>default env object to be used.
+<ul>
+<li>If <code>options.defaults</code> is undefined, the object <code>argv.env</code> will be used before defaulting to <code>{}</code></li>
+</ul>
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>options.describe</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  
+    (default <code>&#39;describe&#39;</code>)
+  </td>
+  <td class='break-word'><span>description for base 
+<code>&#x3C;env></code>
+ command.
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>options.task</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+  
+    (default <code>{}</code>)
+  </td>
+  <td class='break-word'><span>options for 
+<code>&#x3C;task></code>
+ commands.
+</span></td>
+</tr>
+
+  
+    <tr>
+  <td class='break-word'><span class='code bold'>options.task.command</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+  
+    (default <code>&#39;task&#39;</code>)
+  </td>
+  <td class='break-word'><span>name of 
+<code>&#x3C;task></code>
+ command.
+<ol>
+<li><strong>Original</strong>: <code>env &#x3C;task> [key] [value] [--env]</code></li>
+<li><strong>options.task.command='newtask':</strong> <code>env &#x3C;newtask> [key] [value] [--env]</code></li>
+</ol>
+</span></td>
+</tr>
+
+
+  
+    <tr>
+  <td class='break-word'><span class='code bold'>options.task.key</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  
+    (default <code>&#39;key&#39;</code>)
+  </td>
+  <td class='break-word'><span>name of optional 
+<code>[key]</code>
+ argument.
+<ol>
+<li><strong>Original</strong>: <code>env &#x3C;task> [key] [value] [--env]</code></li>
+<li><strong>options.task.key='newkey':</strong> <code>env &#x3C;task> [newkey] [value] [--env]</code></li>
+</ol>
+</span></td>
+</tr>
+
+
+  
+    <tr>
+  <td class='break-word'><span class='code bold'>options.task.value</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  
+    (default <code>&#39;value&#39;</code>)
+  </td>
+  <td class='break-word'><span>name of optional 
+<code>[value]</code>
+ argument.
+<ol>
+<li><strong>Original</strong>: <code>env &#x3C;task> [key] [value] [--env]</code></li>
+<li><strong>options.task.value='newvalue':</strong> <code>env &#x3C;task> [key] [newvalue] [--env]</code></li>
+</ol>
+</span></td>
+</tr>
+
+
+  
+    <tr>
+  <td class='break-word'><span class='code bold'>options.task.env</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+  
+    (default <code>&#39;env&#39;</code>)
+  </td>
+  <td class='break-word'><span>name of optional 
+<code>[--env]</code>
+ argument.
+<ol>
+<li><strong>Original</strong>: <code>env &#x3C;task> [key] [value] [--env]</code></li>
+<li><strong>options.task.env='newenv':</strong> <code>env &#x3C;task> [key] [value] [--newenv]</code></li>
+</ol>
+</span></td>
+</tr>
+
+
+  
+    <tr>
+  <td class='break-word'><span class='code bold'>options.task.reset</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+  
+    (default <code>&#39;reset&#39;</code>)
+  </td>
+  <td class='break-word'><span>name of 
+<code>&#x3C;task</code>
+> command for 
+<code>reset</code>
+.
+<ol>
+<li><strong>Original</strong>: <code>env reset [--env]</code></li>
+<li><strong>options.task.reset='newreset':</strong> <code>env newreset [--env]</code></li>
+</ol>
+</span></td>
+</tr>
+
+
+  
+    <tr>
+  <td class='break-word'><span class='code bold'>options.task.clear</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+  
+    (default <code>&#39;clear&#39;</code>)
+  </td>
+  <td class='break-word'><span>name of 
+<code>&#x3C;task</code>
+> command for 
+<code>clear</code>
+.
+<ol>
+<li><strong>Original</strong>: <code>env clear [--env]</code></li>
+<li><strong>options.task.reset='newclear':</strong> <code>env newclear [--env]</code></li>
+</ol>
+</span></td>
+</tr>
+
+
+  
+    <tr>
+  <td class='break-word'><span class='code bold'>options.task.view</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+  
+    (default <code>&#39;view&#39;</code>)
+  </td>
+  <td class='break-word'><span>name of 
+<code>&#x3C;task</code>
+> command for 
+<code>view</code>
+.
+<ol>
+<li><strong>Original</strong>: <code>env view [--env]</code></li>
+<li><strong>options.task.view='newview':</strong> <code>env newview [--env]</code></li>
+</ol>
+</span></td>
+</tr>
+
+
+  
+    <tr>
+  <td class='break-word'><span class='code bold'>options.task.delete</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+  
+    (default <code>&#39;delete&#39;</code>)
+  </td>
+  <td class='break-word'><span>name of 
+<code>&#x3C;task</code>
+> command for 
+<code>delete</code>
+.
+<ol>
+<li><strong>Original</strong>: <code>env delete [--env]</code></li>
+<li><strong>options.task.delete='newdelete':</strong> <code>env newdelete [key] [--env]</code></li>
+</ol>
+</span></td>
+</tr>
+
+
+  
+    <tr>
+  <td class='break-word'><span class='code bold'>options.task.set</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+  
+    (default <code>&#39;set&#39;</code>)
+  </td>
+  <td class='break-word'><span>name of 
+<code>&#x3C;task</code>
+> command for 
+<code>set</code>
+.
+<ol>
+<li><strong>Original</strong>: <code>env set [--env]</code></li>
+<li><strong>options.task.set='newset':</strong> <code>env newset [key] [value] [--env]</code></li>
+</ol>
+</span></td>
+</tr>
+
+
+  
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        Yargs 
+<a href="https://github.com/yargs/yargs/blob/master/docs/advanced.md#providing-a-command-module">Command Module</a>
+ with the following properties (
+<code>out</code>
+ is the returned Object):
+<ul>
+<li><code>out.command</code>: the command string in the form of <code>options.command &#x3C;options.task.command> [options.task.key] [options.task.value] [--options.task.env]</code></li>
+<li><code>out.describe</code>: the description string for <code>out.command</code></li>
+<li><code>out.handler</code>: the function that manages the env file and returns an <code>argv</code> Object containing command line arguments</li>
+</ul>
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// *** DEFAULT ***</span>
+
+<span class="hljs-keyword">var</span> yargs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'yargs'</span>);
+
+<span class="hljs-comment">// (env) Load command with path to env file</span>
+<span class="hljs-keyword">var</span> env = <span class="hljs-built_in">require</span>(<span class="hljs-string">'yargs-command-env'</span>)({<span class="hljs-attr">file</span>: <span class="hljs-string">'./path/to/env.env'</span>});
+
+<span class="hljs-comment">// (yargs) Add command to manage env file</span>
+<span class="hljs-keyword">var</span> argv = yargs.command(env).argv;
+
+<span class="hljs-comment">// *** CUSTOM ***</span>
+
+<span class="hljs-keyword">var</span> yargs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'yargs'</span>);
+
+<span class="hljs-comment">// (options_command) Setup command options</span>
+options = {};
+options.command = <span class="hljs-string">'env2'</span>;
+options.defaults = {<span class="hljs-attr">field</span>: <span class="hljs-string">'value'</span>};
+options.describe = <span class="hljs-string">'Description'</span>;
+
+<span class="hljs-comment">// (options_task) Setup task options</span>
+options.task = {};
+options.task.command = <span class="hljs-string">'task2'</span>;
+options.task.key = <span class="hljs-string">'key2'</span>;
+options.task.value = <span class="hljs-string">'value2'</span>;
+options.task.env = <span class="hljs-string">'env2'</span>;
+options.task.reset = <span class="hljs-string">'reset2'</span>;
+options.task.clear = <span class="hljs-string">'clear2'</span>;
+options.task.view = <span class="hljs-string">'view2'</span>;
+options.task.delete = <span class="hljs-string">'delete2'</span>;
+options.task.set = <span class="hljs-string">'set2'</span>;
+
+<span class="hljs-comment">// (env) Load command with options</span>
+<span class="hljs-keyword">var</span> env = <span class="hljs-built_in">require</span>(<span class="hljs-string">'yargs-command-env'</span>)(options);
+
+<span class="hljs-comment">// (yargs) Add command to manage env file</span>
+<span class="hljs-keyword">var</span> argv = yargs.command(env).argv;</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+      </div>
+    </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/split.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
